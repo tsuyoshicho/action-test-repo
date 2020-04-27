@@ -11,7 +11,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v1
       - name: generate html
-        uses: tsuyoshicho/action-vimhelp-html-generate@v1
+        uses: tsuyoshicho/action-vimhelp-html-generate@develop
         env:
           FOLDER: build
           BACKGROUND: light
