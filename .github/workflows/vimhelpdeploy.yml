@@ -2,7 +2,7 @@ name: "deploy vim help to gh-pages"
 on:
   push:
     branches:
-      - test/vimhelp-html
+      - test/vimhelp-html-dark
 jobs:
   ghpages:
     name: Convert and deploy vim help
@@ -20,5 +20,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v2
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
+          BRANCH: gh-pages-dark
           FOLDER: build
