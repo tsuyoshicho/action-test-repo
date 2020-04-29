@@ -20,5 +20,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v2
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages-dark
+          BRANCH: gh-pages
           FOLDER: build
