@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+        with:
+          persist-credentials: false
       - name: generate html
         uses: tsuyoshicho/action-vimhelp-html-generate@develop
         env:
