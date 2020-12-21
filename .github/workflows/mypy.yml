@@ -21,7 +21,7 @@ jobs:
           if_true: "github-pr-review"
           if_false: "github-check"
       - name: Lint black
-        uses: reviewdog/action-mypy@v1
+        uses: tsuyoshicho/action-mypy@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: ${{ steps.reporter.outputs.value }}
