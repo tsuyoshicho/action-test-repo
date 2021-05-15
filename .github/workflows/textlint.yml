@@ -14,6 +14,14 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-check
           textlint_flags: "doc/**"
+      - name: textlint-github-pr-check
+        uses: tsuyoshicho/action-textlint@feature/gha-composition
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-check
+          level: info
+          fail_on_error: true
+          textlint_flags: "doc/**"
       - name: textlint-github-pr-review
         uses: tsuyoshicho/action-textlint@feature/gha-composition
         with:
