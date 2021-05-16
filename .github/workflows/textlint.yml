@@ -16,7 +16,7 @@ jobs:
           if_true: "github-pr-review"
           if_false: "github-check"
       - name: Lint textlint
-        uses: tsuyoshicho/action-textlint@fix/exitcode-20210515
+        uses: tsuyoshicho/action-textlint@master
         with:
           github_token: ${{ secrets.github_token }}
           reporter: ${{ steps.reporter.outputs.value }}
