@@ -2,9 +2,9 @@
 
 ## unmatched pairs test
 
-My Name is noname Good bye
+My Name is ななしのごんべ, Good bye.
 
 ## max-ten tes
 
-句読点が多すぎて読みにくいドキュメントを、抑制します。
+句読点が、多すぎて、読みにくい、ドキュメントを、抑制します。
 
