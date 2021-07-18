@@ -22,4 +22,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: ${{ steps.reporter.outputs.value }}
           level: info
-           markdownlint_flags: "./doc"
+          markdownlint_flags: "./doc"
