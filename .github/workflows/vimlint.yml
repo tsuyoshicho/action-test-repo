@@ -8,13 +8,13 @@ jobs:
       - name: Check out code.
         uses: actions/checkout@v1
       - name: vimlint-github-check
-        uses: tsuyoshicho/action-vimlint@v1
+        uses: tsuyoshicho/action-vimlint@master
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-check
           target: testdata
       - name: vimlint-pr-review
-        uses: tsuyoshicho/action-vimlint@v1
+        uses: tsuyoshicho/action-vimlint@master
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
