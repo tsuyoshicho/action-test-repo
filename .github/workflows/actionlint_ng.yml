@@ -1,0 +1,11 @@
+on: pop
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run:
+          echo "test"
+
+          # Actionlint : error occur
+          # .github\workflows\actionlint_ok.yml|1 col 5 error| Error:1:Value is not accepted. Valid values:...
