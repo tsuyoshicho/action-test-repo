@@ -9,13 +9,13 @@ jobs:
         with:
           submodules: true
       - name: textlint-github-check latest
-        uses: tsuyoshicho/action-textlint@v2
+        uses: tsuyoshicho/action-textlint@v3
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-check
           textlint_flags: "doc/**"
       - name: textlint-github-pr-review latest
-        uses: tsuyoshicho/action-textlint@v2
+        uses: tsuyoshicho/action-textlint@v3
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
