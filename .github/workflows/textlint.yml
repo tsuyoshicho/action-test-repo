@@ -35,7 +35,7 @@ jobs:
           reporter: github-check
           textlint_flags: "doc/**"
       - name: textlint-github-pr-review master
-        uses: tsuyoshicho/action-textlint@vmaster
+        uses: tsuyoshicho/action-textlint@master
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
