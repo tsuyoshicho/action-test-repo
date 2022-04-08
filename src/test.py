@@ -1,13 +1,33 @@
-def add(a: int, b: int) -> None:
-    return a + b
+from typing import Literal, overload
+import pytest
 
 
-def sub(a: int, b: int) -> int:
-    return a - b
+class Superclass:
+    @property
+    def name(self) -> str:
+        return 'xyz'
+
+class Subclass(Superclass):
+    @property
+    def name(self) -> int:
+        return 123
 
 
-def div(a: int, b: int) -> int:
-    if b != 0:
+def test_approx():
+    assert 0 == pytest.approx(0)
+
+
+class Someclass:
+    @overload
+    def method(self, arg1: Literal['html']) -> None: ...
+    @overload
+    def method(self, arg1: Literal['xml']) -> None: ...
+    @overload
+    def method(self, arg1: Literal['text']) -> None: ...
+    @overload
+    def method(self, arg1: str) -> None: ...
+    def method(self, arg1):
         pass
-    else:
-        return 0
+
+a = Someclass()
+a.method(123)
