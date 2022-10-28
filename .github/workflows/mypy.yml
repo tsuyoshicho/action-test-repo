@@ -26,5 +26,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: ${{ steps.reporter.outputs.value }}
           level: warning
-          fail_on_error: true
           workdir: "./src"
