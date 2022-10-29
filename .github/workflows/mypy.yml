@@ -28,3 +28,4 @@ jobs:
           level: warning
           fail_on_error: true
           workdir: "./src"
+          ignore_note: true
