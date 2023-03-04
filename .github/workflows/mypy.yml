@@ -21,7 +21,7 @@ jobs:
           if_true: "github-pr-review"
           if_false: "github-check"
       - name: Lint mypy
-        uses: tsuyoshicho/action-mypy@master
+        uses: tsuyoshicho/action-mypy@feature/adaptivesetup
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: ${{ steps.reporter.outputs.value }}
