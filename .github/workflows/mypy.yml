@@ -27,5 +27,6 @@ jobs:
           reporter: ${{ steps.reporter.outputs.value }}
           level: info
           fail_on_error: true
+          setup_method: install
           workdir: "./src/"
           target: "test_1.py test_2.py"
