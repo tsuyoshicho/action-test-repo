@@ -1,20 +1,6 @@
 name: reviewdog(textlint)
 on: [pull_request]
 jobs:
-  textlintlatest:
-    name: runner / textlint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: true
-      - name: textlint-github-check latest
-        uses: tsuyoshicho/action-textlint@v3
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-check
-          fail_on_error: true
-
   textlintlatest-pr:
     name: runner / textlint
     runs-on: ubuntu-latest
@@ -24,33 +10,6 @@ jobs:
           submodules: true
       - name: textlint-github-pr-review latest
         uses: tsuyoshicho/action-textlint@v3
-        with:
-          github_token: ${{ secrets.github_token }}
-          fail_on_error: true
-
-  textlintmaster:
-    name: runner / textlint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: true
-      - name: textlint-github-check master
-        uses: tsuyoshicho/action-textlint@master
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-check
-          fail_on_error: true
-
-  textlintmaster-pr:
-    name: runner / textlint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: true
-      - name: textlint-github-pr-review master
-        uses: tsuyoshicho/action-textlint@master
         with:
           github_token: ${{ secrets.github_token }}
           fail_on_error: true
