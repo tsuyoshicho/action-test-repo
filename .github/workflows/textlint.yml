@@ -1,0 +1,15 @@
+name: reviewdog(textlint)
+on: [pull_request]
+jobs:
+  textlintlatest-pr:
+    name: runner / textlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - name: textlint-github-pr-review latest
+        uses: tsuyoshicho/action-textlint@v3
+        with:
+          github_token: ${{ secrets.github_token }}
+          fail_on_error: true
