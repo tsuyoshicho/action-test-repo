@@ -1,0 +1,64 @@
+name: reviewdog
+on: [push, pull_request]
+jobs:
+  mypy_normal:
+    name: runner / mypy (normal)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Select reporter
+        uses: haya14busa/action-cond@v1
+        id: reporter
+        with:
+          cond: ${{ github.event_name == 'pull_request' }}
+          if_true: "github-pr-review"
+          if_false: "github-check"
+      - name: Lint mypy
+        uses: tsuyoshicho/action-mypy@feature/json
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: ${{ steps.reporter.outputs.value }}
+          level: info
+          fail_on_error: true
+          setup_method: install
+          workdir: "./src/"
+          target: "test_1.py test_2.py"
+
+  # mypy_json:
+  #   name: runner / mypy (json)
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+  #       with:
+  #         submodules: true
+  #     - name: Setup python
+  #       uses: actions/setup-python@v2
+  #       with:
+  #         python-version: 3.9
+  #     - name: Select reporter
+  #       uses: haya14busa/action-cond@v1
+  #       id: reporter
+  #       with:
+  #         cond: ${{ github.event_name == 'pull_request' }}
+  #         if_true: "github-pr-review"
+  #         if_false: "github-check"
+  #     - name: Lint mypy
+  #       uses: tsuyoshicho/action-mypy@feature/json
+  #       with:
+  #         github_token: ${{ secrets.GITHUB_TOKEN }}
+  #         reporter: ${{ steps.reporter.outputs.value }}
+  #         level: info
+  #         fail_on_error: true
+  #         setup_method: install
+  #         workdir: "./src/"
+  #         target: "test_1.py test_2.py"
+  #         output_json: true
+  # 
