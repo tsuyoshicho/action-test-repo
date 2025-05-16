@@ -36,12 +36,12 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - name: textlint-github-check fix/failonerror fail-on-error
+      - name: textlint-github-check fix/failonerror fail_on_error
         uses: tsuyoshicho/action-textlint@fix/failonerror
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-check
-          fail-on-error: true
+          fail_on_error: true
           textlint_flags: "doc/**"
 
   textlint4:
@@ -51,12 +51,12 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - name: textlint-github-pr-review fix/failonerror fail-on-error
+      - name: textlint-github-pr-review fix/failonerror fail_on_error
         uses: tsuyoshicho/action-textlint@fix/failonerror
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
-          fail-on-error: true
+          fail_on_error: true
           textlint_flags: "doc/**"
 
   textlint5:
@@ -66,12 +66,12 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - name: textlint-github-check fix/failonerror fail-level
+      - name: textlint-github-check fix/failonerror fail_level
         uses: tsuyoshicho/action-textlint@fix/failonerror
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-check
-          fail-level: warning
+          fail_level: warning
           textlint_flags: "doc/**"
 
   textlint6:
@@ -81,12 +81,12 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - name: textlint-github-pr-review fix/failonerror fail-level
+      - name: textlint-github-pr-review fix/failonerror fail_level
         uses: tsuyoshicho/action-textlint@fix/failonerror
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
-          fail-level: warning
+          fail_level: warning
           textlint_flags: "doc/**"
 
   textlint7:
@@ -96,13 +96,13 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - name: textlint-github-check fix/failonerror fail-on-error and fail-level
+      - name: textlint-github-check fix/failonerror fail_on_error and fail_level
         uses: tsuyoshicho/action-textlint@fix/failonerror
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-check
-          fail-on-error: true
-          fail-level: warning
+          fail_on_error: true
+          fail_level: warning
           textlint_flags: "doc/**"
 
   textlint8:
@@ -112,11 +112,11 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - name: textlint-github-pr-review fix/failonerror fail-on-error and fail-level
+      - name: textlint-github-pr-review fix/failonerror fail_on_error and fail_level
         uses: tsuyoshicho/action-textlint@fix/failonerror
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
-          fail-on-error: true
-          fail-level: warning
+          fail_on_error: true
+          fail_level: warning
           textlint_flags: "doc/**"
