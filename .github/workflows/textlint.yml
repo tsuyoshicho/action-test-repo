@@ -1,22 +1,122 @@
 name: reviewdog(textlint)
 on: [pull_request]
 jobs:
-  textlint:
+  textlint1:
     name: runner / textlint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - name: textlint-github-check master
-        uses: tsuyoshicho/action-textlint@fix/previewhandling
+      - name: textlint-github-check fix/failonerror no settings
+        uses: tsuyoshicho/action-textlint@fix/failonerror
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-check
           textlint_flags: "doc/**"
-      - name: textlint-github-pr-review master
-        uses: tsuyoshicho/action-textlint@fix/previewhandling
+
+  textlint2:
+    name: runner / textlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: textlint-github-pr-review fix/failonerror no settings
+        uses: tsuyoshicho/action-textlint@fix/failonerror
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
+          textlint_flags: "doc/**"
+
+  textlint3:
+    name: runner / textlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: textlint-github-check fix/failonerror fail-on-error
+        uses: tsuyoshicho/action-textlint@fix/failonerror
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-check
+          fail-on-error: true
+          textlint_flags: "doc/**"
+
+  textlint4:
+    name: runner / textlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: textlint-github-pr-review fix/failonerror fail-on-error
+        uses: tsuyoshicho/action-textlint@fix/failonerror
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          fail-on-error: true
+          textlint_flags: "doc/**"
+
+  textlint5:
+    name: runner / textlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: textlint-github-check fix/failonerror fail-level
+        uses: tsuyoshicho/action-textlint@fix/failonerror
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-check
+          fail-level: warning
+          textlint_flags: "doc/**"
+
+  textlint6:
+    name: runner / textlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: textlint-github-pr-review fix/failonerror fail-level
+        uses: tsuyoshicho/action-textlint@fix/failonerror
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          fail-level: warning
+          textlint_flags: "doc/**"
+
+  textlint7:
+    name: runner / textlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: textlint-github-check fix/failonerror fail-on-error and fail-level
+        uses: tsuyoshicho/action-textlint@fix/failonerror
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-check
+          fail-on-error: true
+          fail-level: warning
+          textlint_flags: "doc/**"
+
+  textlint8:
+    name: runner / textlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: textlint-github-pr-review fix/failonerror fail-on-error and fail-level
+        uses: tsuyoshicho/action-textlint@fix/failonerror
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          fail-on-error: true
+          fail-level: warning
           textlint_flags: "doc/**"
